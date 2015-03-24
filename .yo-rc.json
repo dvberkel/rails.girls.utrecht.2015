@@ -1,0 +1,11 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Model View Controller",
+    "packageVersion": "1.0.0",
+    "revealTheme": "night",
+    "useSass": false,
+    "deployToGithubPages": true,
+    "githubUsername": "dvberkel",
+    "githubRepository": "rails.girls.utrecht.2015"
+  }
+}
