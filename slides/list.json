@@ -2,6 +2,9 @@
     "index.md",
     "2.md",
     {
-        "filename": "heart.html"
+        "filename": "heart.html",
+        "attr": {
+            "data-state": "heart"
+        }
     }
 ]
