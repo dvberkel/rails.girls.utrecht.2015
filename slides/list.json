@@ -1,4 +1,7 @@
 [
     "index.md",
-    "2.md"
+    "2.md",
+    {
+        "filename": "heart.html"
+    }
 ]
