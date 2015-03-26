@@ -92,10 +92,11 @@
         var ab = this.y/(1 + coefficient);
         var w = ab * 1/2 * Math.sin(2 * alpha);
         var h = ab * 1/2 * Math.cos(2 * alpha);
+        var r = ab * 1/2 * sinAlpha;
         return [
             new MoveTo(this.x, this.y),
             new LineTo(this.x + this.direction * w, this.y - ab/2 - h),
-            new HalfCircleTo(this.x, this.y - ab, 100, this.direction)
+            new HalfCircleTo(this.x, this.y - ab, r, this.direction)
         ];
     };
 
