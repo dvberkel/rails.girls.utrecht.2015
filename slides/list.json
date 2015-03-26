@@ -12,5 +12,11 @@
         "attr": {
             "data-background": "image/a-team.jpg"
         }
+    },
+    {
+        "attr": {
+            "data-background": "image/macgyver.jpg",
+            "data-background-position": "top"
+        }
     }
 ]
