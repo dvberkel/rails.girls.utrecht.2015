@@ -29,16 +29,47 @@
         return this._alpha;
     };
 
+    var Step = function(){};
+    Step.prototype.description = function(){
+        return this.type + this.x + ',' + this.y;
+    };
+
     var MoveTo = function(x, y){
+        Step.call(this);
         this.type = 'M';
         this.x = x;
         this.y = y;
     };
+    MoveTo.prototype = Object.create(Step.prototype);
+    MoveTo.prototype.constructor = MoveTo;
 
     var LineTo = function(x, y){
+        Step.call(this);
         this.type = 'L';
         this.x = x;
         this.y = y;
+    };
+    LineTo.prototype = Object.create(Step.prototype);
+    LineTo.prototype.constructor = LineTo;
+
+    var HalfCircleTo = function(x, y, r, direction) {
+        Step.call(this);
+        this.type = 'A';
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.direction = direction;
+    };
+    HalfCircleTo.prototype = Object.create(Step.prototype);
+    HalfCircleTo.prototype.constructor = HalfCircleTo;
+    HalfCircleTo.prototype.description = function(){
+        return [
+            this.type,
+            this.r + ',' + this.r,
+            0,
+            '0,' + (this.direction === -1 ? 1: 0),
+            this.x + ',' + this.y
+        ].join(' ');
     }
 
     var ControlPoints = $.ControlPoints = function(model, direction, x, y){
@@ -64,7 +95,7 @@
         return [
             new MoveTo(this.x, this.y),
             new LineTo(this.x + this.direction * w, this.y - ab/2 - h),
-            new LineTo(this.x, this.y - ab)
+            new HalfCircleTo(this.x, this.y - ab, 100, this.direction)
         ];
     };
 
@@ -78,7 +109,7 @@
     };
     View.prototype.description = function(){
         return this.model.controlPoints().map(function(point){
-            return point.type + point.x + ',' + point.y;
+            return point.description();
         }).join('');
     };
 
