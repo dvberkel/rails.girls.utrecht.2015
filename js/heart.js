@@ -93,11 +93,20 @@
         var w = ab * 1/2 * Math.sin(2 * alpha);
         var h = ab * 1/2 * Math.cos(2 * alpha);
         var r = ab * 1/2 * sinAlpha;
-        return [
+        var points = [
             new MoveTo(this.x, this.y),
             new LineTo(this.x + this.direction * w, this.y - ab/2 - h),
-            new HalfCircleTo(this.x, this.y - ab, r, this.direction)
+            new HalfCircleTo(this.x, this.y - ab, r, this.direction),
         ];
+        var n=10;
+        var ds = ab/n;
+        var dw = ds * 1/2 * Math.tan(alpha);
+        for (var index = 0; index < n; index++) {
+            points.push(new LineTo(this.x + dw, this.y - ab + (index + 1/2) * ds));
+            points.push(new LineTo(this.x, this.y - ab + (index + 1) * ds));
+        }
+
+        return points;
     };
 
     var View = $.View = function(model, path){
