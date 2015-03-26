@@ -29,6 +29,18 @@
         return this._alpha;
     };
 
+    var MoveTo = function(x, y){
+        this.type = 'M';
+        this.x = x;
+        this.y = y;
+    };
+
+    var LineTo = function(x, y){
+        this.type = 'L';
+        this.x = x;
+        this.y = y;
+    }
+
     var ControlPoints = $.ControlPoints = function(model, direction, x, y){
         Observable.call(this);
         this.model = model;
@@ -50,9 +62,9 @@
         var w = ab * 1/2 * Math.sin(2 * alpha);
         var h = ab * 1/2 * Math.cos(2 * alpha);
         return [
-            { 'type': 'M', 'x': this.x, 'y': this.y },
-            { 'type': 'L', 'x': this.x + this.direction * w, 'y': this.y - ab/2 - h },
-            { 'type': 'L', 'x': this.x, 'y': this.y - ab }
+            new MoveTo(this.x, this.y),
+            new LineTo(this.x + this.direction * w, this.y - ab/2 - h),
+            new LineTo(this.x, this.y - ab)
         ];
     };
 
