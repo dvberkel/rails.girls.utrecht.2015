@@ -29,10 +29,10 @@
         return this._alpha;
     };
 
-    var ControlPoints = $.ControlPoints = function(model, x, y){
+    var ControlPoints = $.ControlPoints = function(model, direction, x, y){
         Observable.call(this);
         this.model = model;
-        this.direction = -1;
+        this.direction = direction;
         this.x = x;
         this.y = y;
         this.model.on('alpha', this.signal.bind(this));
@@ -55,5 +55,21 @@
             { 'type': 'L', 'x': this.x, 'y': this.y - ab }
         ];
     };
+
+    var View = $.View = function(model, path){
+        this.model = model;
+        this.path = path;
+        this.update();
+    };
+    View.prototype.update = function(){
+        this.path.setAttribute('d', this.description());
+    };
+    View.prototype.description = function(){
+        return this.model.controlPoints().map(function(point){
+            return point.type + point.x + ',' + point.y;
+        }).join('');
+    };
+
+
 
 })(window.heart = window.heart || {});
