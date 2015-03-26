@@ -18,5 +18,10 @@
             "data-background": "image/macgyver.jpg",
             "data-background-position": "top"
         }
+    },
+    {
+        "attr": {
+            "data-background": "image/hooft.jpg"
+        }
     }
 ]
