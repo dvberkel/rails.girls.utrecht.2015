@@ -7,5 +7,10 @@
             "data-state": "heart"
         }
     },
-    "role-model.md"
+    "role-model.md",
+    {
+        "attr": {
+            "data-background": "image/a-team.jpg"
+        }
+    }
 ]
