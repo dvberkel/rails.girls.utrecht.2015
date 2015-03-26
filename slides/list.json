@@ -23,5 +23,11 @@
         "attr": {
             "data-background": "image/hooft.jpg"
         }
+    },
+    {
+        "filename": "webcam.html",
+        "attr": {
+            "data-state": "webcam"
+        }
     }
 ]

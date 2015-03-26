@@ -1,6 +1,15 @@
-/*global document, Reveal, Velocity, heart*/
+/*global window, document, navigator, Reveal, Velocity, heart*/
 (function(Reveal, Velocity, heart){
     'use strict';
+
+    var videoPromise = new Promise(function(accept, reject){
+        navigator.webkitGetUserMedia({ 'video': {
+            mandatory: {
+                minWidth: 1280,
+                minHeight: 720
+            }
+        }}, accept, reject);
+    });
 
     Reveal.addEventListener('heart', function(){
         function paintHearts(color){
@@ -40,5 +49,13 @@
             }
         }
         document.body.addEventListener('keydown', handler);
+    });
+
+    Reveal.addEventListener('webcam', function(){
+        videoPromise.then(function(localMediaStream){
+            var video = document.getElementById('webcam');
+            video.src = window.URL.createObjectURL(localMediaStream);
+            console.log(video);
+        });
     });
 })(Reveal, Velocity, heart);
