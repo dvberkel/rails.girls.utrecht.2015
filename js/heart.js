@@ -70,7 +70,7 @@
             '0,' + (this.direction === -1 ? 1: 0),
             this.x + ',' + this.y
         ].join(' ');
-    }
+    };
 
     var ControlPoints = $.ControlPoints = function(model, direction, x, y){
         Observable.call(this);
