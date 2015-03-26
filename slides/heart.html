@@ -1,5 +1,16 @@
 <svg  xmlns="http://www.w3.org/2000/svg" version="1.1" width="640" height="480">
-    <g stroke="red" fill="red">
+    <defs>
+        <linearGradient id="rainbow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="red"/>
+            <stop offset="16%" stop-color="orange"/>
+            <stop offset="33%" stop-color="yellow"/>
+            <stop offset="50%" stop-color="green"/>
+            <stop offset="66%" stop-color="blue"/>
+            <stop offset="83%" stop-color="indigo"/>
+            <stop offset="100%" stop-color="purple"/>
+        </linearGradient>
+    </defs>
+    <g stroke="url(#rainbow)" fill="url(#rainbow)">
         <path id="left-heart" d="M 320,0 L 0,240 L 320,480"/>
         <path id="right-heart" d="M 320,0 L 640,240 L 320,480"/>
     </g>
