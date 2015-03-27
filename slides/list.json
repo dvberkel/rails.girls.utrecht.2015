@@ -1,0 +1,54 @@
+[
+    "index.md",
+    "2.md",
+    {
+        "filename": "heart.html",
+        "attr": {
+            "data-state": "heart"
+        }
+    },
+    "role-model.md",
+    {
+        "attr": {
+            "data-background": "image/a-team.jpg"
+        }
+    },
+    {
+        "attr": {
+            "data-background": "image/macgyver.jpg",
+            "data-background-position": "top"
+        }
+    },
+    {
+        "attr": {
+            "data-background": "image/hooft.jpg"
+        }
+    },
+    {
+        "attr": {
+            "data-background": "image/ada-lovelace.jpg"
+        }
+    },
+    {
+        "attr": {
+            "data-background": "image/grace-hopper.jpg"
+        }
+    },
+    {
+        "attr": {
+            "data-background": "image/felienne-hermans.jpg"
+        }
+    },
+    {
+        "attr": {
+            "data-background": "image/lieke-boon.jpeg",
+            "data-background-position": "top"
+        }
+    },
+    {
+        "filename": "webcam.html",
+        "attr": {
+            "data-state": "webcam"
+        }
+    }
+]
