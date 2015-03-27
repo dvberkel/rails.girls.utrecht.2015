@@ -1,5 +1,5 @@
 /*global window, document, navigator, Reveal, Velocity, heart*/
-(function(Reveal, Velocity, heart){
+(function(Reveal, velocity, heart){
     'use strict';
 
     var videoPromise = new Promise(function(accept, reject){
@@ -36,13 +36,13 @@
         function handler(event){
             if (event.keyCode === 65) {
                 if (state === 0) {
-                    Velocity(rightHeart, {translateX: 480}, 2000);
+                    velocity(rightHeart, {translateX: 480}, 2000);
                 }
                 if (state === 1) {
                     paintHearts('url(#rainbow)');
                 }
                 if (state === 2) {
-                    Velocity(rightHeart, {translateX: 0}, 2000);
+                    velocity(rightHeart, {translateX: 0}, 2000);
                     document.body.removeEventListener('keydown', handler);
                 }
                 state++;
