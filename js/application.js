@@ -55,7 +55,6 @@
         videoPromise.then(function(localMediaStream){
             var video = document.getElementById('webcam');
             video.src = window.URL.createObjectURL(localMediaStream);
-            console.log(video);
         });
     });
 })(Reveal, Velocity, heart);
