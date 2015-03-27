@@ -30,6 +30,11 @@
         }
     },
     {
+        "attr": {
+            "data-background": "image/grace-hopper.jpg"
+        }
+    },
+    {
         "filename": "webcam.html",
         "attr": {
             "data-state": "webcam"
