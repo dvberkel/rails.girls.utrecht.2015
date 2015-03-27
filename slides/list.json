@@ -35,6 +35,11 @@
         }
     },
     {
+        "attr": {
+            "data-background": "image/felienne-hermans.jpg"
+        }
+    },
+    {
         "filename": "webcam.html",
         "attr": {
             "data-state": "webcam"
