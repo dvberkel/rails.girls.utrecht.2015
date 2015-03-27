@@ -40,6 +40,12 @@
         }
     },
     {
+        "attr": {
+            "data-background": "image/lieke-boon.jpeg",
+            "data-background-position": "top"
+        }
+    },
+    {
         "filename": "webcam.html",
         "attr": {
             "data-state": "webcam"
