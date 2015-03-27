@@ -25,6 +25,11 @@
         }
     },
     {
+        "attr": {
+            "data-background": "image/ada-lovelace.jpg"
+        }
+    },
+    {
         "filename": "webcam.html",
         "attr": {
             "data-state": "webcam"
